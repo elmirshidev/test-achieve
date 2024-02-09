@@ -1,0 +1,14 @@
+.ToLeft {
+    animation: carousel 10s linear infinite;
+}
+.ToRight {
+    animation: carousel 10s linear infinite reverse;
+}
+@keyframes carousel {
+    100%{
+        transform: translateX(-50%);
+    }
+}
+.TextCarouselWrapper:hover{
+    animation-play-state: paused !important;
+}

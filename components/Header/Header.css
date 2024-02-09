@@ -1,0 +1,8 @@
+button:hover .Fire {
+    @apply text-mainPurple fill-mainPurple;
+}
+.header-scrolled{
+    background: white !important;
+    position: sticky !important;
+    @apply shadow-serviceCardShadow;
+}

@@ -1,0 +1,18 @@
+.mycarousel {
+    animation: scroll 40s linear infinite;
+}
+
+.Item:hover {
+    filter: grayscale(1);
+}
+
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0)
+    }
+    100% {
+        transform: translateX(calc(-300px * 27));
+    }
+}

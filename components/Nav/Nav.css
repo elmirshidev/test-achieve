@@ -1,0 +1,6 @@
+.NavLi:hover ul {
+    display: block;
+    opacity: 1;
+    transition: 300ms all linear;
+    transform: translateY(20px);
+}
