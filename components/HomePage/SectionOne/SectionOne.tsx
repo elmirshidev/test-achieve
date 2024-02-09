@@ -7,7 +7,7 @@ import { FaAngleRight } from "react-icons/fa6";
 export default async function SectionOne({font,locale,resources}:any) {
     const translationsObject = resources[locale].homepage;
     return (
-    <section className={`bg-mainbg`} style={{backgroundImage: `url('https://res.cloudinary.com/tretrak/image/upload/v1651464605/achieve/pic2_eyr13d.png')`,backgroundPosition:"0 100%",backgroundSize:"cover",backgroundRepeat:"no-repeat"}} >
+    <section className={`bg-mainbg pt-20`} style={{backgroundImage: `url('https://res.cloudinary.com/tretrak/image/upload/v1651464605/achieve/pic2_eyr13d.png')`,backgroundPosition:"0 100%",backgroundSize:"cover",backgroundRepeat:"no-repeat"}} >
             <div className={`absolute left-24 bottom-12`}>
                 <img src={'https://res.cloudinary.com/tretrak/image/upload/v1651464604/achieve/pic3_dcdbdc.png'}/>
             </div>
@@ -27,7 +27,7 @@ export default async function SectionOne({font,locale,resources}:any) {
                 <img src={'https://res.cloudinary.com/tretrak/image/upload/v1651464334/achieve/shape25_k6db7h.png'}/>
             </div>
             <div className={`pt-[100px] z-50 flex justify-between items-center 1000:gap-8 800:flex-col 800:!gap-0`}>
-                <div className={`flex flex-col z-50 gap-6 max-w-[75ch] 1200:max-w-[40ch] 800:!max-w-[70ch]`}>
+                <div className={`flex flex-col z-50 gap-6 max-w-[60ch] 1200:max-w-[40ch] 800:!max-w-[70ch]`}>
                     <h1 className={`${font.className}`}>
                         {translationsObject["main_header_one"]} <span className={`h1 text-mainPurple`}>{translationsObject["main_header_two"]}</span>&nbsp;
                         {translationsObject["main_header_three"]} <span className={`h1 typing-text text-mainPurple`}><br className={`800:hidden`}/>

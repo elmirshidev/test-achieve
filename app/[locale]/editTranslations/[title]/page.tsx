@@ -11,7 +11,7 @@ let homeJsonFileNl = JSON.parse(fs.readFileSync(homeJsonFilePathNl));
 
 export default async function Home({params}:any) {
     return (
-        <section className={`p-[20px]`}>
+        <section className={`pt-[100px] p-[20px]`}>
             <EditTranslationsClient filePathEn={homeJsonFilePathEn} filePathNl={homeJsonFilePathNl} title={params.title} JsonEn={homeJsonFileEn} JsonNl={homeJsonFileNl}/>
         </section>
     );

@@ -70,7 +70,7 @@ export default function Nav({locale,resources}:any) {
 
     const listElements = navdata.map((item: any) => (
         <li className='NavLi  relative ' key={item.id}>
-            <Link className={`${activePath === item.slug ? 'text-mainPurple' : 'text-textBlue'} text-[16px] font-[700] hover:text-mainPurple`} href={locale === 'en' ? `/en/${item.slug}` : item.slug}>
+            <Link className={`${activePath === item.slug ? 'text-mainPurple' : 'text-textBlue'} text-[15px] font-[600] hover:text-mainPurple`} href={locale === 'en' ? `/en/${item.slug}` : item.slug}>
                 {item?.value}
             </Link>
             <ul className={`absolute shadow-navBoxShadow bg-white ${item?.links?.length > 0 ? 'border-t-[1px]': ''} border-t-[#eee] !w-[100px] z-50 list-none hidden  opacity-0 duration-300 translate-y-10`}>
