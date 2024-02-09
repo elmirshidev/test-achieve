@@ -1,6 +1,8 @@
 "use client"
 import {useEffect, useState} from "react";
 import './editTranslation.css'
+
+const baseUrl = process.env.NEXT_PUBLIC_URL;
 export default function EditTranslationsClient({
                                                    filePathEn,
                                                    filePathNl,
