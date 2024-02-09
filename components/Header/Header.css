@@ -6,3 +6,6 @@ button:hover .Fire {
     position: sticky !important;
     @apply shadow-serviceCardShadow;
 }
+.hidden{
+    display: none;
+}

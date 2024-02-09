@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongodb";
+import {revalidateTag} from "next/cache";
+
+const basePath = process.env.BASE_PATH;
 
 export async function GET(req: NextRequest) {
     try {
@@ -12,9 +15,11 @@ export async function GET(req: NextRequest) {
         const id = searchParams.get("id");
 
         if (id) {
+
             services = await db.connection
                 .useDb("frontendData")
                 .collection("services")
+                // @ts-ignore
                 .findOne({ _id: +id });
 
             if (!services) {
@@ -45,12 +50,14 @@ export async function PUT(req: NextRequest) {
         }
 
         const updatedData = await req.json();
-        console.log(updatedData);
+
+
         const services = await db.connection
             .useDb("frontendData")
             .collection("services")
+            // @ts-ignore
             .findOneAndUpdate({ _id: +id }, { $set: updatedData }, { returnOriginal: false });
-        await fetch("http://localhost:3000/api/revalidate?tag=services");
+        await revalidateTag("services");
         return NextResponse.json(services);
     } catch (e) {
         console.error(e);

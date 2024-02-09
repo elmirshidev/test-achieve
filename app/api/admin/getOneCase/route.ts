@@ -1,5 +1,9 @@
 import {NextRequest, NextResponse} from "next/server";
 import dbConnect from "@/lib/mongodb";
+import {revalidateTag} from "next/cache";
+
+
+
 
 export async function GET(req: NextRequest) {
     try {
@@ -43,7 +47,7 @@ export async function POST(req:NextRequest) {
             .useDb("frontendData")
             .collection("case")
             .insertOne(newCase);
-        await fetch("http://localhost:3000/api/revalidate?tag=cases");
+        await revalidateTag("cases");
         return NextResponse.json(cases);
     } catch (e) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
@@ -70,7 +74,7 @@ export async function PUT(req: NextRequest) {
             .collection("cases")
             // @ts-ignore
             .findOneAndUpdate({ _id: +id }, { $set: updatedData }, { returnOriginal: false });
-        await fetch("http://localhost:3000/api/revalidate?tag=cases");
+        await revalidateTag("cases");
         return NextResponse.json(cases);
     } catch (e) {
         console.error(e);

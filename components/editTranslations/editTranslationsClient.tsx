@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import './editTranslation.css'
 export default function EditTranslationsClient({
                                                    filePathEn,
@@ -11,7 +11,7 @@ export default function EditTranslationsClient({
     const [editableJsonEn, setEditableJsonEn] = useState(JsonEn);
     const [editableJsonNl, setEditableJsonNl] = useState(JsonNl);
     const [isEditing, setIsEditing] = useState(false);
-    console.log("test")
+
     const handleSave = async () => {
         setIsEditing(true);
         try {
