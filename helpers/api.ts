@@ -1,4 +1,5 @@
 // import getBaseUrl from "./getBaseUrl";
+
 const basePath = process.env.NEXT_PUBLIC_URL;
 export async function getCompanies() {
     const response = await fetch(`${basePath}/api/getCompanies`,{ next: { tags: ['companies'] } });
